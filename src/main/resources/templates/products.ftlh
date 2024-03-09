@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>BUYSELL</title>
+Привет
 </head>
+
 <body>
-Hello world!
+
 </body>
+
 </html>
