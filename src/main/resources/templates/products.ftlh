@@ -8,6 +8,10 @@
 <body>
 <h1>BUYSELL</h1><hr>
 <h4>Товары со всей России</h4>
+<form action="/" method="get">
+    Поиск по названию объявления: <input type="text" name="title"><br>
+    <input type="submit" value="Поиск"/>
+</form>
 <#list products as product>
     <div>
         <p><b>${product.title}</b> ${product.price} | <a href="/product/${product.id}">Подробнее...</a></p>
@@ -21,7 +25,8 @@
     Цена: <input type="text" name="price"><br><br>
     Город: <input type="text" name="city"><br><br>
     Имя: <input type="text" name="author"><br><br>
-    <input type="submit" value="Добавить товар"></input>
+    <input type="submit" value="Добавить товар">
+ </form>
 
 
 </body>
