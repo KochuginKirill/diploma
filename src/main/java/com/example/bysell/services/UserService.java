@@ -1,6 +1,5 @@
 package com.example.bysell.services;
 
-
 import com.example.bysell.models.User;
 import com.example.bysell.models.enums.Role;
 import com.example.bysell.repositories.UserRepository;
@@ -8,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 
 @Service
 @Slf4j

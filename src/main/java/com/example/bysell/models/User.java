@@ -36,7 +36,9 @@ public class User implements UserDetails {
     @CollectionTable(name = "user_re",
     joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
+    @Column
     private Set<Role> roles = new HashSet<>();
+    @Column
     private LocalDateTime dateOfCreated;
 
     @PrePersist
