@@ -32,7 +32,7 @@ public class User implements UserDetails {
     private String password;
     @ElementCollection(targetClass = Role.class)
     @CollectionTable(name = "user_re",
-    joinColumns = @JoinColumn(name = "user_id"))
+            joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     @Column
     private Set<Role> roles = new HashSet<>();
@@ -40,6 +40,10 @@ public class User implements UserDetails {
     private List<Product> products = new ArrayList<>();
     @Column
     private LocalDateTime dateOfCreated;
+
+    public boolean isAdmin() {
+        return roles.contains(Role.ROLE_ADMIN);
+    }
 
     @PrePersist
     private void init(){
