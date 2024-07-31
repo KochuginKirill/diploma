@@ -1,14 +1,14 @@
-spring:
-  application:
-    name: vkBot
-#server:
-#  port: 3334
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    preferIpAddress: true
+#spring:
+#  application:
+#    name: vkBot
+##server:
+##  port: 3334
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka
+#  instance:
+#    preferIpAddress: true
 
 token:
   confirmation: #строка, которую должен вернуть сервер
