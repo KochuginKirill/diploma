@@ -11,9 +11,14 @@
 	<groupId>com.example</groupId>
 	<artifactId>bysell</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bysell</name>
+    <packaging>pom</packaging>
+    <name>bysell</name>
 	<description>WEB_store</description>
-	<properties>
+    <modules>
+        <module>webSrore</module>
+		<module>vkBot</module>
+	</modules>
+    <properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>

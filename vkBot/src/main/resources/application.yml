@@ -1,0 +1,9 @@
+token:
+  confirmation: #строка, которую должен вернуть сервер
+  access: #ключ доступа
+
+secret:
+  key: #секретный ключ
+
+server:
+  port: #ваш порт
