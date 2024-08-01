@@ -1,21 +1,19 @@
-#spring:
-#  application:
-#    name: vkBot
-##server:
-##  port: 3334
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:8761/eureka
-#  instance:
-#    preferIpAddress: true
-
 token:
-  confirmation: #строка, которую должен вернуть сервер
-  access: #ключ доступа
+  confirmation: fd54e193 #строка, которую должен вернуть сервер
+  access: vk1.a.WiWQtdgHoRFLwW03ePIaLHEFSZRXtEPaGgHNrQKE9OxU8entmFq91BYMJXsODvocmagogQpwDnsrqknIyo3M_o4dTokLalNhm2EuEhVGvrGV7sQCfj5xoac5UwDYVwQIT6Y5XtHligv6C8LNOYSmF6CMU9rrbalhvssAK4bmU1cHYlIonpf34WEDasv0eYsMOdqMLx8R8naNUh_Mc9Jefg #ключ доступа
 
 secret:
-  key: #секретный ключ
+  key: kjhgiyfjfhg #секретный ключ
 
 server:
-  port: #ваш порт
+  port: 3334 #ваш порт
+
+spring:
+  application:
+    name: vkBot
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    preferIpAddress: true

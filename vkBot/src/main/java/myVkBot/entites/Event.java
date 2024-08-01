@@ -2,15 +2,22 @@ package myVkBot.entites;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import lombok.RequiredArgsConstructor;
 import myVkBot.Constants;
 import myVkBot.enums.CallbackApi;
 import lombok.Getter;
 import lombok.Setter;
+import myVkBot.model.MessageDTO;
+import myVkBot.repository.MessageRepository;
 
 
 @Getter
 @Setter
+@RequiredArgsConstructor
 public class Event {
+
+    private final MessageRepository messageRepository;
+
     @JsonProperty(Constants.EVENT_TYPE)
     private CallbackApi type;
 
@@ -43,6 +50,10 @@ public class Event {
             message = "type: '" + type.name();
         }
 
+        MessageDTO messageDTO = new MessageDTO();
+        messageDTO.setUserId(String.valueOf(eventObject.getUserId()));
+        messageDTO.setMessage(eventObject.getText());
+        messageRepository.save(messageDTO);
         return message;
     }
 }
