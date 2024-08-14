@@ -12,7 +12,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,6 +20,10 @@ import java.util.List;
 public class ProductService {
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
+
+    public List<Product> getAllProducts() {
+        return productRepository.findAll();
+    }
 
     public List<Product> listProducts(String title) {
         if (title != null) return productRepository.findByTitle(title);
