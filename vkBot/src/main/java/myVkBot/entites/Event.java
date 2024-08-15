@@ -13,10 +13,8 @@ import myVkBot.repository.MessageRepository;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
 public class Event {
 
-    private final MessageRepository messageRepository;
 
     @JsonProperty(Constants.EVENT_TYPE)
     private CallbackApi type;
@@ -49,11 +47,6 @@ public class Event {
         } else {
             message = "type: '" + type.name();
         }
-
-        MessageDTO messageDTO = new MessageDTO();
-        messageDTO.setUserId(String.valueOf(eventObject.getUserId()));
-        messageDTO.setMessage(eventObject.getText());
-        messageRepository.save(messageDTO);
         return message;
     }
 }

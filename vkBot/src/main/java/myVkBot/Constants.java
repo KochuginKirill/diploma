@@ -22,6 +22,8 @@ public class Constants {
     public static final String CALLBACK_API_EVENT_MESSAGE_NEW = "message_new";
     public static final String CALLBACK_API_EVENT_MESSAGE_REPLAY = "message_reply";
 
+    public static final String WEB_STORE_URL = "http://localhost:3333/";
+
     public static final String VK_API_ENDPOINT = "https://api.vk.com/method/";
     public static final String VK_API_VERSION = "5.89";
 }

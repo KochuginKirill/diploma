@@ -1,20 +1,24 @@
 package myVkBot.service;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import myVkBot.Client.WebStoreResponse;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestClient;
 
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+
 
 @Service
 public class WebStoreRestService {
 
     private final DiscoveryClient discoveryClient;
+    private final Gson gson = new Gson();
 
     public WebStoreRestService(DiscoveryClient discoveryClient) {
         this.discoveryClient = discoveryClient;
@@ -32,24 +36,24 @@ public class WebStoreRestService {
     }
 
     public List<WebStoreResponse> findAll() {
-        List<WebStoreResponse> responses = null;
+        Type type = new TypeToken<List<WebStoreResponse>>(){}.getType();
+        String responseJSON = "";
         int attempts = 5;
         while (attempts-- > 0) {
             try {
-                responses = restClient().get()
+                responseJSON = restClient().get()
                         .uri("/api/products")
                         .retrieve()
-                        .body(new ParameterizedTypeReference<List<WebStoreResponse>>() {
-                        });
+                        .body(String.class);
                 break;
             } catch (HttpServerErrorException e) {
                 // ignore
             }
         }
-        if (responses == null) {
+        if (responseJSON == null) {
             throw new RuntimeException("oops");
         } else {
-            return responses;
+            return gson.fromJson(responseJSON, type);
         }
     }
 

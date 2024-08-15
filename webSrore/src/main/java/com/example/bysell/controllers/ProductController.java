@@ -1,8 +1,10 @@
 package com.example.bysell.controllers;
 
 import com.example.bysell.models.Product;
+import com.example.bysell.models.ProductDTO;
 import com.example.bysell.models.User;
 import com.example.bysell.services.ProductService;
+import com.google.gson.Gson;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,11 +16,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.security.Principal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 public class ProductController {
     private final ProductService productService;
+    private final Gson gson;
 
     @GetMapping("/")
     public String products(@RequestParam(name = "searchWord", required = false) String title, Principal principal, Model model) {
@@ -57,5 +62,15 @@ public class ProductController {
         model.addAttribute("user", user);
         model.addAttribute("products", user.getProducts());
         return "my-products";
+    }
+
+    @GetMapping("/api/products")
+    public String products() {
+        List<ProductDTO> tempList = new ArrayList<>();
+        for (Product product:
+                productService.getAllProducts()){
+            tempList.add(new ProductDTO(product.getTitle(), product.getPrice(), product.getCity()));
+        }
+        return gson.toJson(tempList);
     }
 }

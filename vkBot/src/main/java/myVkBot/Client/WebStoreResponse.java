@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 public class WebStoreResponse {
     private String title;
-    private Integer price;
+    private int price;
     private String city;
 }
