@@ -43,7 +43,7 @@ public class WebStoreRestService {
         while (attempts-- > 0) {
             try {
                 projects = restClient().get()
-                        .uri("/api/projects")
+                        .uri("/api/products")
                         .retrieve()
                         .body(new ParameterizedTypeReference<>() {
                         });
