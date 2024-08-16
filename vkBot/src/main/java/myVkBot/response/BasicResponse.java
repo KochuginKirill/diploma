@@ -7,6 +7,7 @@ import myVkBot.entites.Event;
 import myVkBot.enums.MethodApi;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import myVkBot.service.WebStoreRestService;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.config.CookieSpecs;
@@ -23,6 +24,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 public abstract class BasicResponse {
+
     private static final Logger LOG = Logger.getLogger(BasicResponse.class);
 
     @Getter

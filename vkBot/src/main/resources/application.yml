@@ -1,5 +1,5 @@
 token:
-  confirmation: 801769c3 #строка, которую должен вернуть сервер
+  confirmation: 1484696a #строка, которую должен вернуть сервер
   access: vk1.a.WiWQtdgHoRFLwW03ePIaLHEFSZRXtEPaGgHNrQKE9OxU8entmFq91BYMJXsODvocmagogQpwDnsrqknIyo3M_o4dTokLalNhm2EuEhVGvrGV7sQCfj5xoac5UwDYVwQIT6Y5XtHligv6C8LNOYSmF6CMU9rrbalhvssAK4bmU1cHYlIonpf34WEDasv0eYsMOdqMLx8R8naNUh_Mc9Jefg #ключ доступа
 
 secret:

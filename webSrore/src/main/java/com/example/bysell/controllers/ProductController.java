@@ -65,12 +65,12 @@ public class ProductController {
     }
 
     @GetMapping("/api/products")
-    public String products() {
+    public List<ProductDTO> getAllProductsRest() {
         List<ProductDTO> tempList = new ArrayList<>();
         for (Product product:
                 productService.getAllProducts()){
             tempList.add(new ProductDTO(product.getTitle(), product.getPrice(), product.getCity()));
         }
-        return gson.toJson(tempList);
+        return tempList;
     }
 }

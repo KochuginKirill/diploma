@@ -1,13 +1,12 @@
 package myVkBot.response;
 
+import lombok.RequiredArgsConstructor;
 import myVkBot.Client.WebStoreResponse;
 import myVkBot.Constants;
 import myVkBot.entites.Event;
-import myVkBot.service.WebStoreRestService;
+import myVkBot.model.Product;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -17,28 +16,11 @@ import static myVkBot.Constants.WEB_STORE_URL;
 
 public class TestResponse extends BasicResponse {
 
+
+
     public TestResponse(Event event, String accessToken) {
         super(event, accessToken);
     }
-
-    private final WebStoreRestService service = new WebStoreRestService(new DiscoveryClient() {
-        @Override
-        public String description() {
-            return null;
-        }
-
-        @Override
-        public List<ServiceInstance> getInstances(String serviceId) {
-            return null;
-        }
-
-        @Override
-        public List<String> getServices() {
-            return null;
-        }
-    });
-
-    private String temp;
 
     @Override
     protected List<NameValuePair> getQueryParameters() {
@@ -48,11 +30,11 @@ public class TestResponse extends BasicResponse {
         }  else if(super.getEvent().getEventObject().getText().equals("2")) {
             nameValuePairs.add(new BasicNameValuePair("message", "Данный магазин предназначен для размещения товаров пользователями для последующей покупки\n"));
         } else if(super.getEvent().getEventObject().getText().equals("3")){
-            temp = "";
-            for(WebStoreResponse response:
-            service.findAll()){
-                temp += "\n" + response.getTitle() + " " + response.getPrice() + " " + response.getCity();
-            }
+//            String temp = "";
+//            for(WebStoreResponse product:
+//            service){
+//                temp += "\n" + product.getTitle() + " " + product.getPrice() + " " + product.getCity();
+//            }
         } else {
             nameValuePairs.add(new BasicNameValuePair("message", "Вы написали: " + super.getEvent().getEventObject().getText() + "\n"
                     + "Напишите цифру запроса:\n"
