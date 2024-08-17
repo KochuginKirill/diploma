@@ -15,9 +15,9 @@ public class WebStoreApplication {
 		ConfigurableApplicationContext ctx = SpringApplication.run(WebStoreApplication.class, args);
 
 		ProductController productController = ctx.getBean(ProductController.class);
-		for(ProductDTO product:
-		productController.getAllProductsRest()){
-			System.out.println(product.getTitle());
-		}
+//		for(ProductDTO product:
+//		productController.getAllProductsRest()){
+//			System.out.println(product.getTitle());
+//		}
 	}
 }

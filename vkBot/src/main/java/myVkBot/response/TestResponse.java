@@ -18,10 +18,9 @@ public class TestResponse extends BasicResponse {
 
 
 
-    public TestResponse(Event event, String accessToken) {
-        super(event, accessToken);
+    public TestResponse(Event event, String accessToken, String productInfo) {
+        super(event, accessToken, productInfo);
     }
-
     @Override
     protected List<NameValuePair> getQueryParameters() {
         List<NameValuePair> nameValuePairs = new ArrayList<>();
@@ -30,11 +29,7 @@ public class TestResponse extends BasicResponse {
         }  else if(super.getEvent().getEventObject().getText().equals("2")) {
             nameValuePairs.add(new BasicNameValuePair("message", "Данный магазин предназначен для размещения товаров пользователями для последующей покупки\n"));
         } else if(super.getEvent().getEventObject().getText().equals("3")){
-//            String temp = "";
-//            for(WebStoreResponse product:
-//            service){
-//                temp += "\n" + product.getTitle() + " " + product.getPrice() + " " + product.getCity();
-//            }
+            nameValuePairs.add(new BasicNameValuePair("message", getProductInfo()));
         } else {
             nameValuePairs.add(new BasicNameValuePair("message", "Вы написали: " + super.getEvent().getEventObject().getText() + "\n"
                     + "Напишите цифру запроса:\n"

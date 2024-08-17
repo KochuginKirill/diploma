@@ -33,6 +33,9 @@ public abstract class BasicResponse {
     @Getter
     private final String accessToken;
 
+    @Getter
+    private final String productInfo;
+
     protected abstract List<NameValuePair> getQueryParameters();
 
     public void processResponse(MethodApi method) {

@@ -27,11 +27,10 @@ public class SecurityConfig {
     protected SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                                .requestMatchers("/", "/registration", "/images/**",
-                                        "/product/**", "/user/**", "/static/**", "/api/**").permitAll()
+                                .requestMatchers("/", "/registration", "/images/**", "/products/**",
+                                        "/product/**", "/user/**", "/static/**").permitAll()
                                 .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
                                 .anyRequest().authenticated()
-
 
                 )
                 .formLogin((form) -> form
@@ -39,6 +38,7 @@ public class SecurityConfig {
                         .permitAll()
                 )
                 .logout((logout) -> logout.permitAll());
+
 
         return http.build();
     }

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 public class VkService {
     private static final Logger LOG = Logger.getLogger(VkService.class);
     private final ApplicationConfiguration config;
+    private final WebStoreRestService service;
 
     public String doResponse(Event event) {
         if (!event.getSecret().equals(config.getSecretKey())) {
@@ -28,7 +29,7 @@ public class VkService {
         if (event.getType() == CallbackApi.CONFIRMATION) {
             return config.getConfirmationToken();
         } else if (event.getType() == CallbackApi.MESSAGE_NEW) {
-            new TestResponse(event, config.accessToken).processResponse(MethodApi.MESSAGE_SEND);
+            new TestResponse(event, config.accessToken, service.findAll()).processResponse(MethodApi.MESSAGE_SEND);
         }
         return "ok";
     }

@@ -13,14 +13,7 @@ public class VkSimpleBotApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(VkSimpleBotApplication.class, args);
         WebStoreRestService service = ctx.getBean(WebStoreRestService.class);
-        if(service.findAll() == null){
-            System.out.println("---------------------------------------------------------------------");
-            System.out.println("------------------------------Нету-----------------------------------");
-            System.out.println("---------------------------------------------------------------------");
-        } else {
-            System.out.println("---------------------------------------------------------------------");
-            System.out.println("------------------------------Есть-----------------------------------");
-            System.out.println("---------------------------------------------------------------------");
-        }
+        System.out.println(service.findAll());
+
     }
 }

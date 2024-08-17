@@ -10,10 +10,12 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestClient;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
 
@@ -37,25 +39,16 @@ public class WebStoreRestService {
         return RestClient.create(uri);
     }
 
-    public List<WebStoreResponse> findAll() {
-        List<WebStoreResponse> projects = null;
-        int attempts = 5;
-        while (attempts-- > 0) {
-            try {
-                projects = restClient().get()
-                        .uri("/api/products")
-                        .retrieve()
-                        .body(new ParameterizedTypeReference<>() {
-                        });
-                break;
-            } catch (HttpServerErrorException e) {
-                // ignore
-            }
+    public String findAll() {
+        try{
+            String response = restClient().get()
+                    .uri("/products/info")
+                    .retrieve()
+                    .body(String.class);
+            return response;
+        } catch (HttpClientErrorException.NotFound e) {
+            return "Not Found";
         }
-        if (projects == null) {
-            throw new RuntimeException("oops");
-        }
-        return projects;
     }
 
 }

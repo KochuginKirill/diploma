@@ -14,7 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,13 +69,9 @@ public class ProductController {
         return "my-products";
     }
 
-    @GetMapping("/api/products")
-    public List<ProductDTO> getAllProductsRest() {
-        List<ProductDTO> tempList = new ArrayList<>();
-        for (Product product:
-                productService.getAllProducts()){
-            tempList.add(new ProductDTO(product.getTitle(), product.getPrice(), product.getCity()));
-        }
-        return tempList;
+    @GetMapping("/products/info")
+    public String getAllProductsRest(Principal principal, Model model) {
+        model.addAttribute("products", productService.getAllProducts());
+        return "bot-products-info";
     }
 }
