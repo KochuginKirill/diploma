@@ -75,3 +75,25 @@
 
 ![image](https://github.com/user-attachments/assets/6293bd13-b6dc-40f8-a3af-55829146f716)
 
+![image](https://github.com/user-attachments/assets/21fa76b3-7fb2-4a50-9c63-bdf3c8774331)
+
+17. Скачиваем, регистрируемся и запускаем ngrok https://ngrok.com/
+
+18. Вводим ключ данный при регистрации в запущенном приложении
+
+19. Вводим ngrok.exe http 3334
+
+![image](https://github.com/user-attachments/assets/4499ea5e-5d85-40fc-a670-793720de3f86)
+
+20. Копируем адресс и вводим его в вк с последующей проверкой
+
+![image](https://github.com/user-attachments/assets/ac1ee6b9-880e-4638-b105-fde9eb5d2533)
+
+![image](https://github.com/user-attachments/assets/dc8598d3-0e44-4a39-8566-a5981872bb21)
+
+
+21. Пишем боту
+    
+![image](https://github.com/user-attachments/assets/7f0c67ed-3835-4a05-97a9-4c9425ebf9fc)
+
+21. Готово!
