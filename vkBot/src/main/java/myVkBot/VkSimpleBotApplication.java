@@ -12,8 +12,5 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class VkSimpleBotApplication {
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(VkSimpleBotApplication.class, args);
-        WebStoreRestService service = ctx.getBean(WebStoreRestService.class);
-        System.out.println(service.findAll());
-
     }
 }

@@ -28,8 +28,12 @@ public class UserService {
         if (userRepository.findByEmail(email) != null) return false;
         user.setActive(true);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-//        user.getRoles().add(Role.ROLE_USER);
-        user.getRoles().add(Role.ROLE_ADMIN);
+        /**Раскомитить для регистрации как пользователя
+         **/
+        user.getRoles().add(Role.ROLE_USER);
+        /**Раскомитить для регистрации как администратора
+         **/
+//        user.getRoles().add(Role.ROLE_ADMIN);
         log.info("Saving new User with email: {}", email);
         userRepository.save(user);
         return true;
