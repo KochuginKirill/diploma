@@ -96,4 +96,4 @@
     
 ![image](https://github.com/user-attachments/assets/7f0c67ed-3835-4a05-97a9-4c9425ebf9fc)
 
-21. Готово!
+22. Готово!
