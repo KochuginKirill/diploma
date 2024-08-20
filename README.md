@@ -67,6 +67,8 @@
 
 ![image](https://github.com/user-attachments/assets/8b51f92b-b2df-45bb-93c8-359178fc31f0)
 
+## Бот
+
 15. Создаем группу в вк и заходим в настройки, затем работа с Api 
 
 16. Переходим в следующие вкладки и копируем оттуда данные в vkBot/src/main/resources/application.yml
