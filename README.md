@@ -21,7 +21,7 @@
 
 1. Скачиваем mysql (https://dev.mysql.com/downloads/installer/)
 2. Создаем там схему buysell
-3. 
+3. Проверяем
 ![image](https://github.com/user-attachments/assets/9e92055b-2f83-40c3-abe9-2ecce5aa2e17)
 
 4. Вводим данные в webSrore/src/main/resources/application.properties
@@ -60,8 +60,18 @@
 
 14. Ваш товар добавлен и теперь на главной странице!
 
-15. (Опционально) 
+14.1 (Опционально) Аккаунт администратора 
+![image](https://github.com/user-attachments/assets/79963db2-e1ff-4f0a-ae0f-f9109b38d587)
 
+![image](https://github.com/user-attachments/assets/b764040b-2120-42ac-83e9-df04ba20d912)
 
+![image](https://github.com/user-attachments/assets/8b51f92b-b2df-45bb-93c8-359178fc31f0)
 
+15. Создаем группу в вк и заходим в настройки, затем работа с Api 
+
+16. Переходим в следующие вкладки и копируем оттуда данные в vkBot/src/main/resources/application.yml
+
+![image](https://github.com/user-attachments/assets/459c4b5b-6bd2-492d-b42f-66aa4c21f5ca)
+
+![image](https://github.com/user-attachments/assets/6293bd13-b6dc-40f8-a3af-55829146f716)
 
