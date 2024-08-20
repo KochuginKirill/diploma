@@ -65,7 +65,8 @@
 
 ![image](https://github.com/user-attachments/assets/b764040b-2120-42ac-83e9-df04ba20d912)
 
-![image](https://github.com/user-attachments/assets/8b51f92b-b2df-45bb-93c8-359178fc31f0)
+![image](https://github.com/user-attachments/assets/62a1b4de-8fe4-4c9b-8923-8299fa499e62)
+
 
 ## Бот
 
