@@ -84,9 +84,11 @@
 
 18. Вводим ключ данный при регистрации в запущенном приложении
 
-19. Вводим ngrok.exe http 3334
+19. Вводим ngrok.exe http 3334 и запускаем модуль vkbot
 
 ![image](https://github.com/user-attachments/assets/4499ea5e-5d85-40fc-a670-793720de3f86)
+
+![image](https://github.com/user-attachments/assets/d757b761-3ef9-435d-a4d6-7597252b8852)
 
 20. Копируем адресс и вводим его в вк с последующей проверкой
 
